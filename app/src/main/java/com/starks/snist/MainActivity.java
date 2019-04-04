@@ -20,12 +20,14 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     WebView webView;
 
-    public FrameLayout reportframe;
+  ScrollView reportframe;
 
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        reportframe=(ScrollView) findViewById(R.id.report_layout);
 
         webView = (WebView)findViewById(R.id.web);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
 
-        reportframe=(FrameLayout)findViewById(R.id.report_layout);
+        reportframe=(ScrollView) findViewById(R.id.report_layout);
         int id = item.getItemId();
 
         if (id == R.id.reports) {
